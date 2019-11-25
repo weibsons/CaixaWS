@@ -1,7 +1,7 @@
 # CaixaWS
 Webservice para incluir e alterar boletos da Caixa Econômica Federal.
 
-Como usar o Micro Serviço
+Como usar o micro serviço
 
 1. Hospede em um servidor ApacheTomcat 8+
 2. Acesse o serviço através de WEBSERVICE REST
@@ -9,14 +9,15 @@ Como usar o Micro Serviço
 2.2 Utilize a função PUT para ALTERAR_BOLETO
 
 Exemplo de requisição
-´´´´´´´´´´´´
+-----------------------
 
 POST: http://localhost:8084/CaixaWS/rest/boleto
 HEADER:
  Accept: application/json
  Content-type: application/json
 BODY:
-´´json
+```json
+
 {
 	"agencia" : 1294,
 	"codigoBeneficiario" : "945414",
@@ -54,4 +55,5 @@ BODY:
 	"tipoPagamento" : "NAO_ACEITA_VALOR_DIVERGENTE",
 	"quantidade" : 1
 }
-´´
+
+```
