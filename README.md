@@ -5,8 +5,8 @@ Como usar o micro serviço
 
 1. Hospede em um servidor ApacheTomcat 8+
 2. Acesse o serviço através de WEBSERVICE REST
-2.1 Utilize a função POST para INCLUIR_BOLETO
-2.2 Utilize a função PUT para ALTERAR_BOLETO
+2.1. Utilize a função POST para INCLUIR_BOLETO
+2.2. Utilize a função PUT para ALTERAR_BOLETO
 
 Exemplo de requisição
 -----------------------
