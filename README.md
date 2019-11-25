@@ -11,11 +11,19 @@ Como usar o micro serviço
 Exemplo de requisição
 -----------------------
 
-POST: http://localhost:8084/CaixaWS/rest/boleto
+
+#### REQUEST:
+```
+POST | PUT: 
+ http://localhost:8084/CaixaWS/rest/boleto
+
 HEADER:
  Accept: application/json
  Content-type: application/json
-BODY:
+ 
+```
+#### BODY:
+
 ```json
 
 {
@@ -54,6 +62,18 @@ BODY:
 	],	
 	"tipoPagamento" : "NAO_ACEITA_VALOR_DIVERGENTE",
 	"quantidade" : 1
+}
+
+```
+
+#### Reposta do WS:
+
+```json
+
+{
+	"linhaDigitavel": "10499454114400010004800000000158180880000000100",
+	"codigoBarras": "10491808800000001009454144000100040000000015",
+	"url": "https://boletoonline.caixa.gov.br/ecobranca/SIGCB/imprimir/0945414/14000000000000001"
 }
 
 ```
