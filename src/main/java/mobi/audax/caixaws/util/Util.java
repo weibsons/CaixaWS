@@ -8,6 +8,7 @@ package mobi.audax.caixaws.util;
 import java.security.MessageDigest;
 import java.text.Normalizer;
 import java.util.Base64;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  *
@@ -23,6 +24,10 @@ public class Util {
         } catch (Exception ex) {
             return null;
         }
+    }
+
+    public static String smartCut(String text, int length) {
+        return (StringUtils.isNotBlank(text) && text.length() > length) ? text.substring(0, length) : text;
     }
 
     public static String onlyNumber(String s) {

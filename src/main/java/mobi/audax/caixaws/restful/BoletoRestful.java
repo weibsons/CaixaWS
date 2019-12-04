@@ -40,6 +40,10 @@ public class BoletoRestful {
         try {
             TransmitirBoleto tb = new TransmitirBoleto();
             BoletoResponse response = tb.enviar(boleto, OperacaoEnum.INCLUI_BOLETO);
+            if (response.getUrl() == null) {
+                response = tb.enviar(boleto, OperacaoEnum.ALTERA_BOLETO);
+            }
+
             return Response.status(Response.Status.CREATED).entity(response).build();
         } catch (Exception e) {
             e.printStackTrace();

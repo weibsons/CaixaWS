@@ -140,7 +140,7 @@ public class Boleto {
     }
 
     public String getCpfPagador() {
-        return cpfPagador;
+        return Util.onlyNumber(cpfPagador);
     }
 
     public void setCpfPagador(String cpfPagador) {
@@ -148,7 +148,7 @@ public class Boleto {
     }
 
     public String getNomePagador() {
-        return Util.unaccent(nomePagador);
+        return  Util.smartCut(Util.unaccent(nomePagador), 40);
     }
 
     public void setNomePagador(String nomePagador) {
@@ -156,7 +156,7 @@ public class Boleto {
     }
 
     public String getEndereco() {
-        return Util.alphanumeric(Util.unaccent(endereco));
+        return Util.smartCut(Util.alphanumeric(Util.unaccent(endereco)), 40);
     }
 
     public void setEndereco(String endereco) {
@@ -164,7 +164,7 @@ public class Boleto {
     }
 
     public String getBairro() {
-        return Util.unaccent(bairro);
+        return Util.smartCut(Util.unaccent(bairro), 15);
     }
 
     public void setBairro(String bairro) {
@@ -172,7 +172,7 @@ public class Boleto {
     }
 
     public String getCidade() {
-        return Util.unaccent(cidade);
+        return Util.smartCut(Util.unaccent(cidade), 15);
     }
 
     public void setCidade(String cidade) {
@@ -180,7 +180,7 @@ public class Boleto {
     }
 
     public String getUf() {
-        return Util.unaccent(uf);
+        return Util.smartCut(Util.unaccent(uf), 2);
     }
 
     public void setUf(String uf) {

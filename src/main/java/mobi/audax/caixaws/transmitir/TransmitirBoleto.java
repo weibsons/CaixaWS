@@ -6,11 +6,8 @@
 package mobi.audax.caixaws.transmitir;
 
 import java.io.ByteArrayOutputStream;
-import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.HashMap;
-import java.util.Map;
 import javax.xml.soap.MessageFactory;
 import javax.xml.soap.MimeHeaders;
 import javax.xml.soap.SOAPBody;
@@ -28,9 +25,7 @@ import mobi.audax.caixaws.restful.model.Boleto;
 import mobi.audax.caixaws.restful.model.BoletoResponse;
 import mobi.audax.caixaws.restful.model.Mensagem;
 import mobi.audax.caixaws.util.Util;
-import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 /**
@@ -167,7 +162,11 @@ public class TransmitirBoleto {
             SOAPMessage soapResponse = soapConnection.call(createSOAPRequest(soapAction), soapEndpointUrl);
 
             SOAPBody soapBody = soapResponse.getSOAPBody();
-            Map<String, String> map = new HashMap<>();
+
+            System.out.println("Request SOAP Message RESPONSE:");
+            ByteArrayOutputStream out = new ByteArrayOutputStream();
+            soapResponse.writeTo(out);
+            System.out.println("\n");
 
             NodeList nodes = soapBody.getElementsByTagName(this.operacaoEnum.name());
             BoletoResponse br = new BoletoResponse();
@@ -205,8 +204,7 @@ public class TransmitirBoleto {
         soapMessage.writeTo(System.out);
         System.out.println("\n");
 
-        FileUtils.writeByteArrayToFile(new File("c:\\temp\\boleto.xml"), bos.toByteArray());
-
+//        FileUtils.writeByteArrayToFile(new File("c:\\temp\\boleto.xml"), bos.toByteArray());
         return soapMessage;
     }
 }

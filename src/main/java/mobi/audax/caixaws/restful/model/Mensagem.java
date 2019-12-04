@@ -16,7 +16,7 @@ public class Mensagem {
     private String mensagem;
 
     public String getMensagem() {
-        return Util.unaccent(mensagem);
+        return Util.smartCut(Util.unaccent(mensagem), 40);
     }
 
     public void setMensagem(String mensagem) {
