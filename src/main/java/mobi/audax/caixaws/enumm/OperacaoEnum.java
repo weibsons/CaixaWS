@@ -12,8 +12,8 @@ package mobi.audax.caixaws.enumm;
 public enum OperacaoEnum {
 
     INCLUI_BOLETO("IncluiBoleto"),
-    BAIXA_BOLETO("AlteraBoleto"),
-    ALTERA_BOLETO("BaixaBoleto");
+    BAIXA_BOLETO("AlteraBoleto");
+//    ALTERA_BOLETO("BaixaBoleto");
 
     private final String operacao;
 

@@ -40,9 +40,9 @@ public class BoletoRestful {
         try {
             TransmitirBoleto tb = new TransmitirBoleto();
             BoletoResponse response = tb.enviar(boleto, OperacaoEnum.INCLUI_BOLETO);
-            if (response.getUrl() == null) {
-                response = tb.enviar(boleto, OperacaoEnum.ALTERA_BOLETO);
-            }
+//            if (response.getUrl() == null) {
+//                response = tb.enviar(boleto, OperacaoEnum.ALTERA_BOLETO);
+//            }
 
             return Response.status(Response.Status.CREATED).entity(response).build();
         } catch (Exception e) {
@@ -51,18 +51,18 @@ public class BoletoRestful {
         }
     }
 
-    @PUT
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response alterar(Boleto boleto) {
-        try {
-            TransmitirBoleto tb = new TransmitirBoleto();
-            BoletoResponse response = tb.enviar(boleto, OperacaoEnum.ALTERA_BOLETO);
-            return Response.status(Response.Status.CREATED).entity(response).build();
-        } catch (Exception e) {
-            e.printStackTrace();
-            return Response.serverError().build();
-        }
-    }
+//    @PUT
+//    @Consumes(MediaType.APPLICATION_JSON)
+//    @Produces(MediaType.APPLICATION_JSON)
+//    public Response alterar(Boleto boleto) {
+//        try {
+//            TransmitirBoleto tb = new TransmitirBoleto();
+//            BoletoResponse response = tb.enviar(boleto, OperacaoEnum.ALTERA_BOLETO);
+//            return Response.status(Response.Status.CREATED).entity(response).build();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            return Response.serverError().build();
+//        }
+//    }
 
 }
