@@ -166,6 +166,7 @@ public class TransmitirBoleto {
             System.out.println("Request SOAP Message RESPONSE:");
             ByteArrayOutputStream out = new ByteArrayOutputStream();
             soapResponse.writeTo(out);
+            soapResponse.writeTo(System.out);
             System.out.println("\n");
 
             NodeList nodes = soapBody.getElementsByTagName(this.operacaoEnum.name());
