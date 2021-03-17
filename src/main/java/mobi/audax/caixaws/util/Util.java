@@ -5,6 +5,7 @@
  */
 package mobi.audax.caixaws.util;
 
+import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.text.Normalizer;
 import java.util.Base64;
@@ -65,5 +66,52 @@ public class Util {
             }
         }
         return alphanumeric.toString().trim();
+    }
+
+    /**
+     * Função estatica para adicionar zero a esquerda e manté-los no respectivo
+     * numeral. <br /> O valor de zeros para adicionar não deve ser superior a
+     * String completa, por exemplo. <br /><br />
+     *
+     * valor = 123<br /> zeros = 2<br /><br />
+     *
+     * Retornará exceção a quantidade de zeros deve ser igual ou maior ao
+     * numeral informado.<br /><br />
+     *
+     * Forma correta:<br /><br />
+     *
+     * valor = 123<br /> zeros = 4<br /><br /> retorno 0123 (quatro algarimos)
+     *
+     *
+     * @param BigInteger valor Valor que deseja adicionar zeros
+     * @param int zeros quantidade de zeros para adicionar
+     * @return String
+     */
+    public static String zeroFill(int valor, int zeros) {
+        return zeroFill(valor + "", zeros);
+    }
+
+    public static String zeroFill(String valor, int zeros) {
+        String sValor = valor;
+
+        if (sValor.length() > zeros) {
+            return sValor;
+        }
+
+        int restantes = zeros - sValor.length();
+        String zadd = "";
+        for (int i = 0; i < restantes; i++) {
+            zadd += "0";
+        }
+
+        return zadd.concat(sValor);
+    }
+
+    public static String zeroFill(Long valor, int zeros) {
+        return zeroFill(valor + "", zeros);
+    }
+
+    public static String zeroFill(BigInteger valor, int zeros) {
+        return zeroFill(valor + "", zeros);
     }
 }

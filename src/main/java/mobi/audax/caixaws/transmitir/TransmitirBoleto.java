@@ -163,7 +163,7 @@ public class TransmitirBoleto {
 
             SOAPBody soapBody = soapResponse.getSOAPBody();
 
-            System.out.println("Request SOAP Message RESPONSE:");
+            System.out.println("Response SOAP Message:");
             ByteArrayOutputStream out = new ByteArrayOutputStream();
             soapResponse.writeTo(out);
             soapResponse.writeTo(System.out);
