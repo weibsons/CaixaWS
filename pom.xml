@@ -17,7 +17,7 @@
         <org.springframework.security.version>3.2.4.RELEASE</org.springframework.security.version>
         <javassist.version>3.18.1-GA</javassist.version>
         <org.apache.struts.version>2.5.18</org.apache.struts.version>
-        <hibernate.version>4.3.5.Final</hibernate.version>
+        <hibernate.version>5.4.24.Final</hibernate.version>
         <tomcat-dbcp.version>7.0.42</tomcat-dbcp.version>
         <org.slf4j.version>1.7.12</org.slf4j.version>
         <logback.version>1.1.1</logback.version>
