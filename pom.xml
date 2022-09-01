@@ -39,7 +39,7 @@
         <recaptcha4j.version>0.0.8</recaptcha4j.version>
         <com.thetransactioncompany.cors.version>2.4</com.thetransactioncompany.cors.version>
         <java-property-utils.version>1.9.1</java-property-utils.version>
-        <org.jsoup.version>1.8.2</org.jsoup.version>
+        <org.jsoup.version>1.15.3</org.jsoup.version>
         <com.sun.jersey.version>1.19</com.sun.jersey.version>
     </properties>
     
